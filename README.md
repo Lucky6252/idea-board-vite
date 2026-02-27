@@ -1,3 +1,7 @@
+<p align="center">
+IDEA BOARD
+[Live Demo](https://idea-board-vite.vercel.app/)
+
 # Idea Board remade with Vite
 
 this is an idea boart that allows a user to create new ideas, edit existing ideas or delete them. Each idea is represented as a tile on the board that displays a title, description and character used as the user reaches the limit. The description text has max length of 140 characters.
@@ -25,3 +29,4 @@ CSS
 React
 Vite
 ```
+</p>
