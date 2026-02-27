@@ -1,73 +1,27 @@
-# React + TypeScript + Vite
+# Idea Board remade with Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+this is an idea boart that allows a user to create new ideas, edit existing ideas or delete them. Each idea is represented as a tile on the board that displays a title, description and character used as the user reaches the limit. The description text has max length of 140 characters.
 
-Currently, two official plugins are available:
+There is a button to edit and or delete an existing tile. For buttons react-icon/md icons where used. It took me two days to create this version. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Requirement meet:
 
-## React Compiler
+A page is responsive.
+Each idea tile contains title and description and is editable.
+localStorage API is used to persist current state when the page is refreshed.
+Character count as the user is approaching the limit of their description.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# To Do
 
-## Expanding the ESLint configuration
+Ability to edit idea (title and description) inline.
+Adding created/updated time.
+Ability to sort ideas by date or alphabetically.
+Add an unobtrusive notification when an update is made to a tile.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Technologies used 
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Typescript
+CSS
+React
+Vite
 ```
