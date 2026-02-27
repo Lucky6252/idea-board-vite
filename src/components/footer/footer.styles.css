@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    gap: 5rem;
+    background-color: #E6E6E9;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    min-width: 6rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.footer-logo h3 {
+    color: #000000;
+}
+
+.app-description {
+    height: 100%;
+}
+
+.app-description p {
+    font-size: 0.8rem;
+    text-overflow: inherit;
+    color: #000000;
+    text-align: center;
+}
+
+.copywrite-details {
+    min-width: 9rem;
+}
+
+.copywrite-details p {
+    color: #000000;
+
+}
+
+.git-button {
+    color: #000000;
+}
+
+.git-button:hover {
+    color:#66666E;
+}

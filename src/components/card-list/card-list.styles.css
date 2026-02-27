@@ -1,0 +1,25 @@
+.card-list-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    /* margin: 2rem auto; */
+    width: 100%;
+    /* align-items: center; */
+    justify-items: center;
+    /* min-height: 100vh; */
+}
+
+@media (min-width: 810px) and (max-width: 1200px) {
+    .card-list-container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+
+    }
+}
+
+@media (max-width: 811px){
+    .card-list-container {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+}

@@ -1,0 +1,25 @@
+#root {
+  margin: 0 auto;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header-wrapper {
+  align-self: flex-start;
+  width: 100%;
+}
+
+.body-wrapper {
+  flex: 1;
+  /* overflow: auto; */
+  width: 100%;
+}
+
+.footer-wrapper {
+  align-self: flex-end;
+  width: 100%;
+}

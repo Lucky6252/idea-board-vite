@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+.element-group{
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    background-color: #E6E6E9;
+    color: #000000;
+    border: none;
+}
+
+textarea {
+    background-color: #E6E6E9;
+    color: #000000;
+    border: none;
+    resize: none;
+}
+
+label {
+    color: #000000;
+    font-weight: 400;
+}
+
+.btn-save {
+    margin-top: 3px;
+    width: 20px;
+    height: 20px;
+    color: #000000;
+}
+
+
+.btn-save:hover {
+    color: #66666E;
+    cursor: pointer;
+}
