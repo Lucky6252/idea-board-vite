@@ -2,6 +2,7 @@ import { MdDelete, MdEdit } from "react-icons/md";
 import { useIdeas } from "../../custome-hooks/useIdeas.hook";
 
 import type { ideaType } from "../../context/idea.types";
+import EditableInput from "../editable-input/eidtable-input.component";
 import "./card.styles.css";
 
 type CardProps = {
@@ -11,16 +12,20 @@ type CardProps = {
 };
 
 const Card = ({ card, idx, onEdit }: CardProps) => {
-  const { removeIdea } = useIdeas();
+  const { removeIdea, updateIdea } = useIdeas();
   const { title, description } = card;
 
   const onDeleteClick = () => {
     removeIdea(idx);
   };
 
+  const handleTitleChange = (newTitleValue: string) => {
+    updateIdea(idx, {...card, title: newTitleValue});
+  }
+
   return (
     <div className="card-container">
-      <h2>{title}</h2>
+      <EditableInput titleValue={title} onChange={handleTitleChange}/>
       <p>{description}</p>
       <div className="btn-container">
         <MdDelete className="btn-delete" onClick={onDeleteClick} />

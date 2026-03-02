@@ -28,14 +28,14 @@ const EditableInput = ({ titleValue, onChange }: EditableInputProps) => {
   return (
     <>
       {isEditable ? (
-        <input
+        <input className="title-input"
           value={tempValue}
           onChange={handleChange}
           onBlur={handleBlur}
           autoFocus
         />
       ) : (
-        <span onClick={handleClick}>{titleValue}</span>
+        <span onClick={handleClick}><h2>{titleValue}</h2></span>
       )}
     </>
   );
