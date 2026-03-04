@@ -1,18 +1,20 @@
 import { useState, type ChangeEvent } from "react";
+import { MdEdit } from "react-icons/md";
 import "./eidtable-input.styles.css";
 
 type EditableInputProps = {
   titleValue: string;
-  onChange: (newTitleValue: string) => void;
+  name: string;
+  onChange: (newTitleValue: string, name: string) => void;
 };
 
-const EditableInput = ({ titleValue, onChange }: EditableInputProps) => {
+const EditableInput = ({ titleValue, name,  onChange }: EditableInputProps) => {
   const [isEditable, setIsEditable] = useState<boolean>(false);
   const [tempValue, setTempValue] = useState<string>(titleValue);
 
   const handleBlur = () => {
     setIsEditable(false);
-    onChange(tempValue);
+    onChange(tempValue, name);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -22,6 +24,10 @@ const EditableInput = ({ titleValue, onChange }: EditableInputProps) => {
   };
 
   const handleClick = () => {
+    setIsEditable(true);
+  }
+
+  const handleEditButton = () => {
     setIsEditable(true);
   }
 
@@ -35,7 +41,9 @@ const EditableInput = ({ titleValue, onChange }: EditableInputProps) => {
           autoFocus
         />
       ) : (
-        <span onClick={handleClick}><h2>{titleValue}</h2></span>
+        <span className="title-span" onClick={handleClick}><h2 className="title-h2">{titleValue}</h2>
+        <MdEdit className="title-edit-icon" onClick={handleEditButton}/>
+        </span>
       )}
     </>
   );

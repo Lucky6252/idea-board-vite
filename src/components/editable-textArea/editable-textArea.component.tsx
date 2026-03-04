@@ -1,36 +1,45 @@
 import "./editable-textArea.styles.css";
 import { useState } from "react";
 import type { ChangeEvent } from "react";
+import { MdEdit } from "react-icons/md";
+import { useIdeas } from "../../custome-hooks/useIdeas.hook";
 
 type EditableTextAreaProps = {
   descValue: string;
-  onChange: (newDescValue: string) => void;
+  name: string;
+  onChange: (newDescValue: string, name: string) => void;
 };
 
-const EditableTextArea = ({ descValue, onChange }: EditableTextAreaProps) => {
-  const [isEditable, setIsEditable] = useState<boolean>(false);
+const EditableTextArea = ({ descValue, name, onChange }: EditableTextAreaProps) => {
   const [tempValue, setTempValue] = useState<string>(descValue);
+  const {counter, isEditable, isEdit} = useIdeas();
 
   const handleBlur = () => {
-    setIsEditable(false);
-    onChange(tempValue);
+    isEditable(false);
+    onChange(tempValue, name);
   };
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = e.target;
 
+    counter(value.length);
     setTempValue(value);
   };
 
   const handleClick = () => {
-    setIsEditable(true);
+    isEditable(true);
   };
+
+  const handleEditButton = () => {
+    isEditable(true);
+
+  }
 
   return (
     <>
-      {isEditable ? (
+      {isEdit ? (
         <textarea
-          className="title-input"
+          className="desc-text-area"
           value={tempValue}
           onChange={handleChange}
           onBlur={handleBlur}
@@ -40,9 +49,12 @@ const EditableTextArea = ({ descValue, onChange }: EditableTextAreaProps) => {
           cols={35}
         />
       ) : (
-        <span onClick={handleClick}>
-          <h2>{descValue}</h2>
+        <>
+        <span className="desc-span" onClick={handleClick}>
+          {descValue}
         </span>
+        <MdEdit className="desc-edit-icon" onClick={handleEditButton}/>
+        </>
       )}
     </>
   );

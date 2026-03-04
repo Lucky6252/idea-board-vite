@@ -24,44 +24,38 @@
   transform: scale(1.05);
 }
 
-.card-container h2 {
+.card-container .title-wrapper {
   justify-self: flex-start;
-  text-align: center;
-  height: auto;
-  font-size: 1.2rem;
-  color: #000000;
 }
-
-.card-container p {
+.card-container .description-wrapper {
   flex: 1;
-  font-size: 0.9rem;
-  color: #000000;
-  overflow-wrap: break-word;
 }
 
-.btn-container {
+.card-footer {
   display: flex;
-  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.btn-container .btn-delete {
+.card-footer .btn-delete {
   color: #000000;
   width: 20px;
   height: 30px;
   cursor: pointer;
 }
+
+.card-footer .counter-wrapper {
+  margin:auto;
+}
+
+.card-footer .date-text {
+  color: #000000;
+  font-size: 0.8rem;
+}
+
 
 .btn-container .btn-delete:hover {
   color: #66666e;
 }
 
-.btn-container .btn-edit {
-  color: #000000;
-  width: 20px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.btn-container .btn-edit:hover {
-  color: #66666E;
-}
