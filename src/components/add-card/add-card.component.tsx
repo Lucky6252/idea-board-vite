@@ -6,9 +6,11 @@ import { MdSave } from "react-icons/md";
 import { useState } from "react";
 import './add-card.styles.css'
 
-const defaultIdea = {
+const defaultIdea: ideaType = {
   title: "",
   description: "",
+  modifiedDate: 0,
+  isUpated: false,
 };
 
 const AddCard = () => {
@@ -35,7 +37,8 @@ const AddCard = () => {
 
   const saveIdea = () => {
     if (idea.title.length > 0 && idea.description.length > 0) {
-      addIdea(idea);
+      const newIdea = {...idea, isUpdated: false, modifiedDate: Date.now()}
+      addIdea(newIdea);
       setCount(0);
       setIdea(defaultIdea);
     } else {
@@ -50,24 +53,19 @@ const AddCard = () => {
 
   return (
     <div className="card-container">
-      <h2>Create New Idea Card</h2>
-      <div className="element-group">
-        <label>Title</label>
-        <input value={idea.title} type="text" name="title" onChange={handleChange} placeholder="Enter Title here" />
-      </div>
-      <div className="element-group">
-        <label>Description</label>
+        <input  autoFocus className="title-input" value={idea.title} type="text" name="title" onChange={handleChange} placeholder="Enter New Idea Title here..." />
         <textarea
+        id="description"
+        className="desc-text-area"
           value={idea.description}
-          placeholder="Enter Description here. Only 140 characters allowed"
+          placeholder={idea.title.trim() ? "Enter Description here. Only 140 characters allowed" : ''}
           name="description"
           maxLength={140}
           onChange={handleChange}
           rows={5}
           cols={35}
         ></textarea>
-      </div>
-      <div className="btn-container">
+      <div className="card-footer">
         <p className="count-label" style={counterColorChange}>
           {count}/140
         </p>

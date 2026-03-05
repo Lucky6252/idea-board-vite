@@ -1,97 +1,71 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ChangeEvent } from "react";
 
 import { useIdeas } from "../../custome-hooks/useIdeas.hook";
 import type { ideaType } from "../../context/idea.types";
 import Card from "../card/card.component";
 import AddCard from "../add-card/add-card.component";
-import Popup from "../popup/popup.component";
 import "./card-list.styles.css";
 
-const defaultIdea: ideaType = {
-  title: "",
-  description: "",
-};
-
 const CardList = () => {
-  const { ideas, isOpen, updateIdea, isPopupOpen } = useIdeas();
-  const [editedText, setEditedText] = useState<ideaType>(defaultIdea);
-  const [editedIndex, setEditedIndex] = useState<number | null>(null);
+  const { ideas } = useIdeas();
+  const [sortType, setSortType] = useState<"newest" | "oldest" | "az" | "za">(
+    "oldest",
+  );
+  const [sortedIdeas, setSortedIdeas] = useState<ideaType[]>();
 
-  const editIdea = (idx: number, idea: ideaType) => {
-    setEditedIndex(idx);
-    setEditedText(idea);
-    isPopupOpen(!isOpen);
+  const sortingIdeas = () => {
+    setSortedIdeas(
+      [...ideas].sort((a, b) => {
+        if (sortType === "newest") return b.modifiedDate - a.modifiedDate;
+        if (sortType === "oldest") return a.modifiedDate - b.modifiedDate;
+        if (sortType === "az") return a.title.localeCompare(b.title);
+        if (sortType === "za") return b.title.localeCompare(a.title);
+        return 0;
+      }),
+    );
   };
 
-  const updateIdeaFromPopup = () => {
+  useEffect(() => {
+    setSortedIdeas(ideas);
+  }, [ideas]);
 
-    if (editedIndex != null){
-      console.log("passing check...")
-      updateIdea(editedIndex, editedText);
+  useEffect(() => {
+    sortingIdeas();
+  }, [sortType]);
+
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const { value } = e.target;
+
+    if (
+      value === "newest" ||
+      value === "oldest" ||
+      value === "az" ||
+      value === "za"
+    ) {
+      setSortType(value);
     }
-    else{
-      isPopupOpen(!isOpen);
-      return;
-    }
-
-    isPopupOpen(!isOpen);
-  };
-
-  const cancelPopup = () => {
-    isPopupOpen(!isOpen);
-  };
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setEditedText((prev) => {
-      return { ...prev, [name]: value };
-    });
   };
 
   return (
-    <div className="card-list-container">
-      {ideas &&
-        ideas.map((idea, idx) => {
-          return (
-            <Card
-              key={idx}
-              card={idea}
-              idx={idx}
-              onEdit={() => editIdea(idx, idea)}
-            />
-          );
-        })}
-      <AddCard />
-      {isOpen && (
-        <Popup onSave={updateIdeaFromPopup} onCancel={cancelPopup}>
-          <h2>Edit an Idea Card</h2>
-          <div className="element-group">
-            <label>Title</label>
-            <input
-              type="text"
-              required
-              name="title"
-              onChange={handleChange}
-              value={editedText.title}
-            />
-          </div>
-          <div className="element-group">
-            <label>Description</label>
-            <textarea
-              value={editedText.description}
-              required
-              name="description"
-              maxLength={140}
-              onChange={handleChange}
-              rows={5}
-              cols={35}
-            ></textarea>
-          </div>
-        </Popup>
-      )}
+    <div className="card-list">
+      <div className="sort-container">
+        <select className="dropdown" value={sortType} onChange={handleChange}>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="az">A-Z</option>
+          <option value="za">Z-A</option>
+        </select>
+      </div>
+
+      <div className="card-list-container">
+        <AddCard />
+        {sortedIdeas &&
+          sortedIdeas.map((idea, idx) => {
+            return <Card key={idx} card={idea} idx={idx} />;
+          })}
+        
+      </div>
     </div>
   );
 };

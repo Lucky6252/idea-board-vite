@@ -1,6 +1,7 @@
 <p align="center">
 IDEA BOARD
 [Live Demo](https://idea-board-vite.vercel.app/)
+</p>
 
 # Idea Board remade with Vite
 
@@ -29,4 +30,6 @@ CSS
 React
 Vite
 ```
-</p>
+<<<<<<< HEAD
+=======
+>>>>>>> edit_inline

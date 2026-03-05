@@ -6,7 +6,7 @@ import type { ideaType } from "./idea.types";
 
 const InitializeFromLocalStorage = ():ideaType[] => {
     const dataFromLocalStorage = localStorage.getItem("ideas");
-    return dataFromLocalStorage ? JSON.parse(dataFromLocalStorage) : [{title: "", description: ""}];
+    return dataFromLocalStorage ? JSON.parse(dataFromLocalStorage) : [{title: "", description: "", modifiedDate: null, isUpdated: false}];
   }
 
 type ideaProviderPropType = {
@@ -15,7 +15,8 @@ type ideaProviderPropType = {
 
 export const IdeaProvider = ({ children }: ideaProviderPropType) => {
   const [ideas, setIdeas] = useState<ideaType[]>(InitializeFromLocalStorage);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
     if (ideas) {
@@ -34,6 +35,8 @@ export const IdeaProvider = ({ children }: ideaProviderPropType) => {
         return {
           title: updatedIdea.title,
           description: updatedIdea.description,
+          modifiedDate: updatedIdea.modifiedDate,
+          isUpdated: updatedIdea.isUpdated,
         };
       }
       return idea;
@@ -49,12 +52,16 @@ export const IdeaProvider = ({ children }: ideaProviderPropType) => {
     }
   }
 
-  const isPopupOpen = (popupState: boolean) => {
-    setIsOpen(popupState);
+  const isEditable = (editState: boolean) => {
+    setIsEdit(editState);
+  }
+
+  const counter = (wordCount: number) => {
+    setCount(wordCount);
   }
 
   return(
-    <IdeaContext.Provider value={{ideas, addIdea, updateIdea, removeIdea, isPopupOpen, isOpen}}>
+    <IdeaContext.Provider value={{ideas, addIdea, updateIdea, removeIdea, isEditable, isEdit, count, counter}}>
     {children}
     </IdeaContext.Provider>
   );
