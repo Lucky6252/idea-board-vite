@@ -6,7 +6,7 @@ import type { ideaType } from "./idea.types";
 
 const InitializeFromLocalStorage = ():ideaType[] => {
     const dataFromLocalStorage = localStorage.getItem("ideas");
-    return dataFromLocalStorage ? JSON.parse(dataFromLocalStorage) : [{title: "", description: "", modifiedDate: null, isUpdated: false}];
+    return dataFromLocalStorage ? JSON.parse(dataFromLocalStorage) : [{title: "", description: "", modifiedDate: 0, isUpdated: false}];
   }
 
 type ideaProviderPropType = {

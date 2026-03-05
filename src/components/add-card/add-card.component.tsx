@@ -10,7 +10,7 @@ const defaultIdea: ideaType = {
   title: "",
   description: "",
   modifiedDate: 0,
-  isUpated: false,
+  isUpdated: false,
 };
 
 const AddCard = () => {
