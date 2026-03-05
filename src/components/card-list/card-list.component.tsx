@@ -59,11 +59,12 @@ const CardList = () => {
       </div>
 
       <div className="card-list-container">
+        <AddCard />
         {sortedIdeas &&
           sortedIdeas.map((idea, idx) => {
             return <Card key={idx} card={idea} idx={idx} />;
           })}
-        <AddCard />
+        
       </div>
     </div>
   );
