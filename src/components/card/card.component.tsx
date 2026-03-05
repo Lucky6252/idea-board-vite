@@ -6,7 +6,6 @@ import type { ideaType } from "../../context/idea.types";
 import EditableInput from "../editable-input/eidtable-input.component";
 import EditableTextArea from "../editable-textArea/editable-textArea.component";
 import Counter from "../counter/counter.component";
-import IdeaLogo from '../../assets/IdeaLogo.svg'
 import "./card.styles.css";
 
 type CardProps = {

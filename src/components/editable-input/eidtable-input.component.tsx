@@ -3,18 +3,21 @@ import { MdEdit } from "react-icons/md";
 import "./eidtable-input.styles.css";
 
 type EditableInputProps = {
-  titleValue: string;
+  titleValue?: string | undefined;
   name: string;
   onChange: (newTitleValue: string, name: string) => void;
 };
 
 const EditableInput = ({ titleValue, name,  onChange }: EditableInputProps) => {
   const [isEditable, setIsEditable] = useState<boolean>(false);
-  const [tempValue, setTempValue] = useState<string>(titleValue);
+  const [tempValue, setTempValue] = useState<string | undefined>(titleValue);
 
   const handleBlur = () => {
     setIsEditable(false);
-    onChange(tempValue, name);
+    if(tempValue){
+
+      onChange(tempValue, name);
+    }
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
