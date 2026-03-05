@@ -9,6 +9,19 @@
     /* min-height: 100vh; */
 }
 
+.sort-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    justify-content: flex-end;
+}
+
+.sort-container .dropdown {
+    align-self: center;
+    height: 20px;
+}
+
 @media (min-width: 810px) and (max-width: 1200px) {
     .card-list-container {
         grid-template-columns: repeat(2, 1fr);
