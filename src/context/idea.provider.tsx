@@ -53,6 +53,7 @@ export const IdeaProvider = ({ children }: ideaProviderPropType) => {
   }
 
   const isEditable = (editState: boolean) => {
+    console.log("Inside provider method!!!");
     setIsEdit(editState);
   }
 
