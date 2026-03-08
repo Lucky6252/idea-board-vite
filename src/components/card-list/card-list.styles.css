@@ -36,7 +36,14 @@
   }
 }
 
-@media (min-width: 1441px) and (max-width: 2560px) {
+@media (min-width: 1763px) {
+  .card-list-container {
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+}
+
+@media (min-width: 2482px) and (max-width: 2560px) {
   .card-list-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

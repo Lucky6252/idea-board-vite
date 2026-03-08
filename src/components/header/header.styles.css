@@ -44,3 +44,16 @@
 
   
 }
+
+
+
+@media (min-width: 2482px) and (max-width: 2560px) {
+  .logo-container img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .logo-container .logo-label {
+    font-size: 3rem;
+  }
+}
