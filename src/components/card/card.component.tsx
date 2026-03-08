@@ -1,6 +1,6 @@
 import { MdDelete } from "react-icons/md";
 import { useIdeas } from "../../custome-hooks/useIdeas.hook";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import type { ideaType } from "../../context/idea.types";
 import EditableInput from "../editable-input/eidtable-input.component";
@@ -47,7 +47,6 @@ const Card = ({ card, idx }: CardProps) => {
 
   return (
     <div className="card-container">
-      <ToastContainer/>
       <div className="title-wrapper">
         <EditableInput
           titleValue={title}
