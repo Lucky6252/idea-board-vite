@@ -1,6 +1,8 @@
 import { useIdeas } from "../../custome-hooks/useIdeas.hook";
 import type { CSSProperties } from "react";
 
+import './counter.styles.css'
+
 const Counter = () => {
   const { count } = useIdeas();
 
@@ -12,7 +14,7 @@ const Counter = () => {
 
 
   return (
-    <p style={counterColorChange}>
+    <p className="counter-p" style={counterColorChange}>
       {count}/140
     </p>
   );

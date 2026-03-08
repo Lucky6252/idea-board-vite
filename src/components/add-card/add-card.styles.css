@@ -37,3 +37,9 @@ label {
     color: #66666E;
     cursor: pointer;
 }
+
+@media (min-width: 312px) and (max-width: 375px) {
+    .btn-save {
+        width: 15px;
+    }
+}
