@@ -57,7 +57,7 @@
   color: #66666e;
 }
 
-@media (min-width: 312px) and (max-width: 375px) {
+@media (min-width: 312px) and (max-width: 482px) {
   .card-container {
     width: 260px;
     height: 200px;

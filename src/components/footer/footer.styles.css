@@ -39,7 +39,7 @@
 }
 
 .app-description p .extra-text {
-    display: none;
+  display: none;
 }
 
 .copywrite-details {
@@ -58,9 +58,10 @@
   color: #66666e;
 }
 
-@media (min-width: 312px) and (max-width: 375px) {
+@media (min-width: 312px) and (max-width: 482px) {
   .footer-container {
-    gap: auto;
+    gap: 0;
+    justify-content: space-between;
   }
 
   .app-description {
@@ -75,7 +76,6 @@
     width: 15px;
   }
 
-
   .footer-logo img {
     width: 2.5rem;
     height: 2.5rem;
@@ -86,7 +86,11 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (min-width: 483px) and (max-width: 734px) {
+  .footer-container {
+    gap: 0;
+    justify-content: space-between;
+  }
   .app-description {
     display: none;
   }
@@ -113,13 +117,13 @@
 
   .app-description p .extra-text {
     display: inline;
-}
+  }
 
-.app-description p {
+  .app-description p {
     font-size: 0.9rem;
-}
+  }
 
-.footer-logo img {
+  .footer-logo img {
     width: 5rem;
     height: 5rem;
   }

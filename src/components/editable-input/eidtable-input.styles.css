@@ -32,7 +32,7 @@
   display: inline;
 }
 
-@media (min-width: 312px) and (max-width: 375px) {
+@media (min-width: 312px) and (max-width: 482px) {
   .title-h2 {
     font-size: 1rem;
   }

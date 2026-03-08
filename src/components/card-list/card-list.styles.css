@@ -22,16 +22,25 @@
   height: 20px;
 }
 
-@media (min-width: 810px) and (max-width: 1200px) {
+
+
+@media (max-width: 897px) {
+  .card-list-container {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+}
+
+@media (min-width: 898px) and (max-width: 1315px) {
   .card-list-container {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }
 }
 
-@media (max-width: 811px) {
-  .card-list-container {
-    grid-template-columns: repeat(1, 1fr);
+@media (min-width: 1316px) and (max-width: 1762px) {
+    .card-list-container {
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
   }
 }
