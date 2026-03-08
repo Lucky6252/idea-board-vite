@@ -15,13 +15,14 @@ A page is responsive.
 Each idea tile contains title and description and is editable.
 localStorage API is used to persist current state when the page is refreshed.
 Character count as the user is approaching the limit of their description.
-
-# To Do
-
 Ability to edit idea (title and description) inline.
 Adding created/updated time.
 Ability to sort ideas by date or alphabetically.
 Add an unobtrusive notification when an update is made to a tile.
+
+# To Do
+
+Adjust an unobtrusive notification when an update is made to a tile for mobile and smaller screens.
 
 # Technologies used 
 
