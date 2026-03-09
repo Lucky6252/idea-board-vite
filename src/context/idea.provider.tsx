@@ -15,7 +15,6 @@ type ideaProviderPropType = {
 
 export const IdeaProvider = ({ children }: ideaProviderPropType) => {
   const [ideas, setIdeas] = useState<ideaType[]>(InitializeFromLocalStorage);
-  const [isEdit, setIsEdit] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
@@ -52,17 +51,12 @@ export const IdeaProvider = ({ children }: ideaProviderPropType) => {
     }
   }
 
-  const isEditable = (editState: boolean) => {
-    console.log("Inside provider method!!!");
-    setIsEdit(editState);
-  }
-
   const counter = (wordCount: number) => {
     setCount(wordCount);
   }
 
   return(
-    <IdeaContext.Provider value={{ideas, addIdea, updateIdea, removeIdea, isEditable, isEdit, count, counter}}>
+    <IdeaContext.Provider value={{ideas, addIdea, updateIdea, removeIdea, count, counter}}>
     {children}
     </IdeaContext.Provider>
   );
