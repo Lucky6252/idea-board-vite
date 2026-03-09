@@ -8,12 +8,21 @@ import AddCard from "../add-card/add-card.component";
 import "./card-list.styles.css";
 
 const CardList = () => {
+  //Ideas used to create card(s)
   const { ideas } = useIdeas();
-  const [sortType, setSortType] = useState<"newest" | "oldest" | "az" | "za">(
+
+  //String union type for sort type. Only this can be accepted.
+  type SortTypes = "newest" | "oldest" | "az" | "za";
+
+  //Local state for sorting cards.
+  const [sortType, setSortType] = useState<SortTypes>(
     "oldest",
   );
+
+  //Ideas sorted accroding to selected selected option from dropdown list.
   const [sortedIdeas, setSortedIdeas] = useState<ideaType[]>();
 
+  //Function for sorting ideas according to selected option.
   const sortingIdeas = () => {
     setSortedIdeas(
       [...ideas].sort((a, b) => {
@@ -26,17 +35,21 @@ const CardList = () => {
     );
   };
 
+  //Monitor ideas and updated ideas to sorted ideas
   useEffect(() => {
     setSortedIdeas(ideas);
   }, [ideas]);
 
+  //Monitor option selected from the dropdown list and sort according to selected option.
   useEffect(() => {
     sortingIdeas();
   }, [sortType]);
 
+  //Handles value change in the sorting dropdown list.
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
 
+    //Safety to ensure selected option is known.
     if (
       value === "newest" ||
       value === "oldest" ||

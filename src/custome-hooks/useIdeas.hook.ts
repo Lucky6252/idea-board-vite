@@ -2,13 +2,13 @@ import { IdeaContext } from "../context/idea.context";
 
 import { useContext } from "react";
 
-
+//Custom hook to access context safe and is centralized.
 export const useIdeas = () => {
-    const contextIsNotNull = useContext(IdeaContext);
+    const context = useContext(IdeaContext);
 
-    if(!contextIsNotNull) {
-        throw new Error("IdeaContext is null");
+    if(!context) {
+        throw new Error("IdeaContext is used outside provider");
     }
 
-    return contextIsNotNull;
+    return context;
 }

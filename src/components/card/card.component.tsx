@@ -9,25 +9,36 @@ import EditableTextArea from "../editable-textArea/editable-textArea.component";
 import Counter from "../counter/counter.component";
 import "./card.styles.css";
 
+//types for Card properties received from CardList.
 type CardProps = {
   card: ideaType;
   idx: number;
 };
 
 const Card = ({ card, idx }: CardProps) => {
+  //Safely accessed global states through custom hook
   const { removeIdea, updateIdea } = useIdeas();
+  //Local state to control the counter visibility.
   const [isEditing, setIsEditing] = useState(false);
+  //Decontructed values from provided card. Card provided is ideas from CartList.
   const { title, description } = card;
 
+  //Formatted date to display DD/MM/YYYY
   const formattedDate = new Date(card.modifiedDate).toLocaleString("en-GB");
 
+  //Notification message toast from react-toastify library. Check package.json for more details.
+  //Message used to notify user after successfull update.
   const notify = () => toast("Your Idea Card is updated successfully")
 
+  //Handles delete button. Uses global state to filter out only ideas kept.
   const onDeleteClick = () => {
     removeIdea(idx);
   };
 
+  //Handle update and receive props from EditableInput and EditableTextArea components.
+  //Updates through global state.
   const handleUpdate = (newTitleValue: string, name: string) => {
+    //checks which objects needs update and ensures update only occurs if there are changes made.
     if (name === "title" && !(newTitleValue === card.title)) {
       updateIdea(idx, {
         ...card,
