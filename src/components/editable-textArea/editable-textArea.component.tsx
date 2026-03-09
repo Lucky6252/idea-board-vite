@@ -8,39 +8,50 @@ type EditableTextAreaProps = {
   descValue: string;
   name: string;
   onChange: (newDescValue: string, name: string) => void;
+  setIsEditing: (value: boolean) => void;
 };
 
-const EditableTextArea = ({ descValue, name, onChange }: EditableTextAreaProps) => {
-  const [tempValue, setTempValue] = useState<string>(descValue);
-  const {counter, isEditable, isEdit} = useIdeas();
+const EditableTextArea = ({
+  descValue,
+  name,
+  onChange,
+  setIsEditing,
+}: EditableTextAreaProps) => {
+  const [tempDescValue, setTempDescValue] = useState<string>(descValue);
+  const [isEdit, setIsEdit] = useState(false);
+  const { counter } = useIdeas();
 
   const handleBlur = () => {
-    isEditable(false);
-    onChange(tempValue, name);
+    if (tempDescValue) {
+      setIsEdit(!isEdit);
+      setIsEditing(!isEdit);
+      onChange(tempDescValue, name);
+    }
   };
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = e.target;
 
     counter(value.length);
-    setTempValue(value);
+    setTempDescValue(value);
   };
 
   const handleClick = () => {
-    isEditable(true);
+    setIsEditing(!isEdit);
+    setIsEdit(!isEdit);
   };
 
   const handleEditButton = () => {
-    isEditable(true);
-
-  }
+    setIsEditing(!isEdit);
+    setIsEdit(!isEdit);
+  };
 
   return (
     <>
       {isEdit ? (
         <textarea
           className="desc-text-area"
-          value={tempValue}
+          value={tempDescValue}
           onChange={handleChange}
           onBlur={handleBlur}
           autoFocus
@@ -50,10 +61,10 @@ const EditableTextArea = ({ descValue, name, onChange }: EditableTextAreaProps) 
         />
       ) : (
         <>
-        <span className="desc-span" onClick={handleClick}>
-          {descValue}
-        </span>
-        <MdEdit className="desc-edit-icon" onClick={handleEditButton}/>
+          <span className="desc-span" onClick={handleClick}>
+            {descValue}
+          </span>
+          <MdEdit className="desc-edit-icon" onClick={handleEditButton} />
         </>
       )}
     </>

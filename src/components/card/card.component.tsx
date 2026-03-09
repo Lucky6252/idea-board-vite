@@ -1,6 +1,7 @@
 import { MdDelete } from "react-icons/md";
 import { useIdeas } from "../../custome-hooks/useIdeas.hook";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 import type { ideaType } from "../../context/idea.types";
 import EditableInput from "../editable-input/eidtable-input.component";
@@ -14,7 +15,8 @@ type CardProps = {
 };
 
 const Card = ({ card, idx }: CardProps) => {
-  const { removeIdea, updateIdea, isEdit } = useIdeas();
+  const { removeIdea, updateIdea } = useIdeas();
+  const [isEditing, setIsEditing] = useState(false);
   const { title, description } = card;
 
   const formattedDate = new Date(card.modifiedDate).toLocaleString("en-GB");
@@ -41,6 +43,7 @@ const Card = ({ card, idx }: CardProps) => {
         isUpdated: true,
         modifiedDate: Date.now(),
       });
+      console.log(isEditing);
       notify();
     }
   };
@@ -59,6 +62,7 @@ const Card = ({ card, idx }: CardProps) => {
           descValue={description}
           name="description"
           onChange={handleUpdate}
+          setIsEditing={setIsEditing}
         />
       </div>
       <div className="card-footer">
@@ -68,7 +72,7 @@ const Card = ({ card, idx }: CardProps) => {
           <p className="date-text">Created at: {formattedDate}</p>
         )}
         <div className="counter-wrapper">
-          {isEdit ? <Counter /> : <div></div>}
+          {isEditing ? <Counter /> : <div></div>}
         </div>
         <MdDelete className="btn-delete" onClick={onDeleteClick} />
       </div>
