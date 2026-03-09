@@ -1,3 +1,4 @@
+//Idea object Types representation for this project
 export type ideaType = {
   title: string;
   description: string;
@@ -5,6 +6,7 @@ export type ideaType = {
   isUpdated: boolean;
 };
 
+//Context type for global states
 export type ideaContextType = {
     ideas: ideaType[];
     addIdea: (newIdea: ideaType) => void;

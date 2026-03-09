@@ -43,7 +43,6 @@ const Card = ({ card, idx }: CardProps) => {
         isUpdated: true,
         modifiedDate: Date.now(),
       });
-      console.log(isEditing);
       notify();
     }
   };
