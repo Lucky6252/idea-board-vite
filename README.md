@@ -12,7 +12,7 @@ this is an idea boart that allows a user to create new ideas, edit existing idea
 
 There is a button to edit and or delete an existing tile. For buttons react-icon/md icons where used. It took me two days to create this version.
 
-# Requirement meet:
+## Requirement meet:
 
 A page is responsive.
 Each idea tile contains title and description and is editable.
@@ -23,13 +23,9 @@ Adding created/updated time.
 Ability to sort ideas by date or alphabetically.
 Add an unobtrusive notification when an update is made to a tile.
 
-# To Do
+## Tech Stack
 
-Adjust an unobtrusive notification when an update is made to a tile for mobile and smaller screens.
-
-# Technologies used
-
-Typescript
-CSS
-React
-Vite
+- **Programming Language**: Typescript
+- **Styling**: CSS
+- **Framework**: React
+- **Build Tool**: Vite
