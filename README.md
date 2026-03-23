@@ -1,13 +1,16 @@
-<p align="center">
-IDEA BOARD
-[Live Demo](https://idea-board-vite.vercel.app/)
-</p>
+<div align="center">
+    <h1>IDEA BOARD </h1>
+    <h6>
+        Hosted by <a href="https://vercel.com/">Vercel</a>
+    </h6>
+    <a href="https://idea-board-vite.vercel.app/">Live Demo</a>
+</div>
 
 # Idea Board remade with Vite
 
 this is an idea boart that allows a user to create new ideas, edit existing ideas or delete them. Each idea is represented as a tile on the board that displays a title, description and character used as the user reaches the limit. The description text has max length of 140 characters.
 
-There is a button to edit and or delete an existing tile. For buttons react-icon/md icons where used. It took me two days to create this version. 
+There is a button to edit and or delete an existing tile. For buttons react-icon/md icons where used. It took me two days to create this version.
 
 # Requirement meet:
 
@@ -24,13 +27,9 @@ Add an unobtrusive notification when an update is made to a tile.
 
 Adjust an unobtrusive notification when an update is made to a tile for mobile and smaller screens.
 
-# Technologies used 
+# Technologies used
 
 Typescript
 CSS
 React
 Vite
-```
-<<<<<<< HEAD
-=======
->>>>>>> edit_inline
