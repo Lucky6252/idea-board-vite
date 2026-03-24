@@ -65,7 +65,7 @@ const EditableTextArea = ({
     <>
       {isEdit ? (
         <textarea
-          className="desc-text-area"
+          className="!bg-neutral-800 !text-white w-full h-full !font-light"
           value={tempDescValue}
           onChange={handleChange}
           onBlur={handleBlur}
@@ -75,12 +75,12 @@ const EditableTextArea = ({
           cols={35}
         />
       ) : (
-        <>
-          <span className="desc-span" onClick={handleClick}>
+        <div className="group w-full h-full">
+          <span className="text-base text-gray-50 font-light" onClick={handleClick}>
             {descValue}
           </span>
-          <MdEdit className="desc-edit-icon" onClick={handleEditButton} />
-        </>
+          <MdEdit className="hidden group-hover:inline size-[0.7rem] text-gray-50 ml-[0.5rem]" onClick={handleEditButton} />
+        </div>
       )}
     </>
   );

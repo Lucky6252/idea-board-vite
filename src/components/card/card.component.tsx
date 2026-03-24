@@ -59,16 +59,16 @@ const Card = ({ card, idx }: CardProps) => {
   };
 
   return (
-    <div className="w-sm h-[250px] px-[5px] py-[7px] rounded-md bg-[#2F3136] mt-[5px] flex flex-col
+    <div className="w-sm h-[250px] px-[5px] py-[7px] rounded-md bg-[#36393F] mt-[5px] flex flex-col
     shadow-md shadow-neutral-300 transition-transform duration-250 ease-out hover:scale-[1.05]">
-      <div className="title-wrapper">
+      <div className="justify-self-start">
         <EditableInput
           titleValue={title}
           name="title"
           onChange={handleUpdate}
         />
       </div>
-      <div className="description-wrapper">
+      <div className="flex-1">
         <EditableTextArea
           descValue={description}
           name="description"
@@ -76,16 +76,16 @@ const Card = ({ card, idx }: CardProps) => {
           setIsEditing={setIsEditing}
         />
       </div>
-      <div className="card-footer">
+      <div className="flex justify-between items-center w-full">
         {card.isUpdated ? (
-          <p className="date-text">Updated at: {formattedDate}</p>
+          <p className="text-xs text-gray-50">Updated at: {formattedDate}</p>
         ) : (
-          <p className="date-text">Created at: {formattedDate}</p>
+          <p className="text-xs text-gray-50">Created at: {formattedDate}</p>
         )}
         <div className="counter-wrapper">
           {isEditing ? <Counter /> : <div></div>}
         </div>
-        <MdDelete className="btn-delete" onClick={onDeleteClick} />
+        <MdDelete className="text-[#0000000] hover:text-[#202225] cursor-pointer" onClick={onDeleteClick} />
       </div>
     </div>
   );

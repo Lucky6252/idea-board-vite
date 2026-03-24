@@ -18,7 +18,7 @@ const Counter = () => {
 
 
   return (
-    <p className="counter-p" style={counterColorChange}>
+    <p className="text-xs" style={counterColorChange}>
       {count}/140
     </p>
   );
