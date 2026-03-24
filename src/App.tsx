@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   return (
     
-    <div className="app-container">
+    <div className="bg-[#18191C] h-full">
       <ToastContainer position="top-center" limit={1} />
       <div className="header-wrapper">
         <Header />

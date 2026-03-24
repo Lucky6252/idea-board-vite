@@ -1,7 +1,7 @@
-<svg viewBox="10 20 100 70" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<svg viewBox="10 20 100 70" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
 
-  <!-- Board (blue fill) -->
-  <rect x="10" y="20" width="100" height="70" rx="8" fill="#2563eb"></rect>
+  <!-- Board -->
+  <rect x="10" y="20" width="100" height="70" rx="8"></rect>
 
   <!-- Lightbulb -->
   <path d="M60 35 
@@ -11,7 +11,7 @@
            L65 70 
            C65 68, 65 65, 68 63 
            C72 60, 75 56, 75 50 
-           C75 42, 70 35, 60 35 Z" fill="none"></path>
+           C75 42, 70 35, 60 35 Z"></path>
 
   <!-- Bulb base -->
   <line x1="55" y1="74" x2="65" y2="74"></line>

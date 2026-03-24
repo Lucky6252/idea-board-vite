@@ -59,7 +59,8 @@ const Card = ({ card, idx }: CardProps) => {
   };
 
   return (
-    <div className="card-container">
+    <div className="w-sm h-[250px] px-[5px] py-[7px] rounded-md bg-[#2F3136] mt-[5px] flex flex-col
+    shadow-md shadow-neutral-300 transition-transform duration-250 ease-out hover:scale-[1.05]">
       <div className="title-wrapper">
         <EditableInput
           titleValue={title}

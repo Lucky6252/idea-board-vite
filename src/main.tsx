@@ -7,7 +7,9 @@ import { IdeaProvider } from "./context/idea.provider.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <IdeaProvider>
-      <App />
+      <div className="">
+        <App />
+      </div>
     </IdeaProvider>
   </StrictMode>,
 );
