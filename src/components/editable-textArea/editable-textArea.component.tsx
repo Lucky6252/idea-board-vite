@@ -62,7 +62,7 @@ const EditableTextArea = ({
   };
 
   return (
-    <>
+    <div className="pt-5 px-2">
       {isEdit ? (
         <textarea
           className="!bg-neutral-800 !text-white w-full h-full !font-light"
@@ -82,7 +82,7 @@ const EditableTextArea = ({
           <MdEdit className="hidden group-hover:inline size-[0.7rem] text-gray-50 ml-[0.5rem]" onClick={handleEditButton} />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

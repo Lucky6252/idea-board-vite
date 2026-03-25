@@ -85,7 +85,7 @@ const Card = ({ card, idx }: CardProps) => {
         <div className="counter-wrapper">
           {isEditing ? <Counter /> : <div></div>}
         </div>
-        <MdDelete className="text-[#0000000] hover:text-[#202225] cursor-pointer" onClick={onDeleteClick} />
+        <MdDelete className="text-gray-50 hover:text-gray-400 cursor-pointer" onClick={onDeleteClick} />
       </div>
     </div>
   );

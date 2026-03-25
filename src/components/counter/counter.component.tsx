@@ -11,7 +11,7 @@ const Counter = () => {
   //to 120 but is higher or equals 100. And red when its higher than 120.
   //Only visible if characters are higher or equal to 100 
   const counterColorChange: CSSProperties = {
-    color: count <= 120? "orange":"red",
+    color: count <= 120? "orange":"white",
     visibility: count >= 100 ? "visible" : "hidden",
     fontSize: "0.8rem",
   };

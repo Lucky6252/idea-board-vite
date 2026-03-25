@@ -61,9 +61,9 @@ const CardList = () => {
   };
 
   return (
-    <div className="card-list">
-      <div className="sort-container">
-        <select className="dropdown" value={sortType} onChange={handleChange}>
+    <div className="w-full h-full">
+      <div className="flex justify-end w-full h-15">
+        <select className="self-center" value={sortType} onChange={handleChange}>
           <option value="newest">Newest</option>
           <option value="oldest">Oldest</option>
           <option value="az">A-Z</option>

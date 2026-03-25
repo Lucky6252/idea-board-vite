@@ -48,7 +48,7 @@ const EditableInput = ({ titleValue, name, onChange }: EditableInputProps) => {
   };
 
   return (
-    <>
+    <div className="px-2">
       {isEditable ? (
         <input
           className="w-full !bg-neutral-800 !text-white mt-4 text-2xl text-center"
@@ -63,7 +63,7 @@ const EditableInput = ({ titleValue, name, onChange }: EditableInputProps) => {
           <MdEdit className="hidden group-hover:inline size-[0.7rem] text-gray-50 mt-[0.5rem]" onClick={handleEditButton} />
         </span>
       )}
-    </>
+    </div>
   );
 };
 
