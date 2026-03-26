@@ -35,6 +35,7 @@ const EditableTextArea = ({
       // If there is any value in temporary value then update local boolean state and Card's onChange and boolean state.
       setIsEdit(!isEdit);
       setIsEditing(!isEdit);
+      counter(0);
       onChange(tempDescValue, name);
     }
   };

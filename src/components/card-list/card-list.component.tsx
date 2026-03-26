@@ -62,7 +62,7 @@ const CardList = () => {
 
   return (
     <div className="w-full h-full">
-      <div className="flex justify-end w-full h-15">
+      <div className="flex justify-end w-full h-15 px-5">
         <select className="self-center text-gray-50 bg-[#36393F]" value={sortType} onChange={handleChange}>
           <option value="newest">Newest</option>
           <option value="oldest">Oldest</option>

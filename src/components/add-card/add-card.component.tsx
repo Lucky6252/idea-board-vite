@@ -5,6 +5,7 @@ import type { CSSProperties, ChangeEvent } from "react";
 import { MdSave } from "react-icons/md";
 import { useState } from "react";
 import './add-card.styles.css'
+import Counter from "../counter/counter.component";
 
 const defaultIdea: ideaType = {
   title: "",
@@ -14,9 +15,8 @@ const defaultIdea: ideaType = {
 };
 
 const AddCard = () => {
-  const { addIdea } = useIdeas();
+  const { addIdea, counter } = useIdeas();
   const [idea, setIdea] = useState<ideaType>(defaultIdea);
-  const [count, setCount] = useState<number>(0);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -24,7 +24,7 @@ const AddCard = () => {
     const { name, value } = e.target;
 
     if (name === "description") {
-      setCount(value.length);
+      counter(value.length);
       setIdea((prev) => {
         return { ...prev, [name]: value };
       });
@@ -39,16 +39,11 @@ const AddCard = () => {
     if (idea.title.length > 0 && idea.description.length > 0) {
       const newIdea = {...idea, isUpdated: false, modifiedDate: Date.now()}
       addIdea(newIdea);
-      setCount(0);
+      counter(0);
       setIdea(defaultIdea);
     } else {
       alert("Please enter information to both inputs");
     }
-  };
-
-  const counterColorChange: CSSProperties = {
-    color: "red",
-    visibility: count >= 100 ? "visible" : "hidden",
   };
 
   return (
@@ -68,9 +63,7 @@ const AddCard = () => {
           cols={35}
         ></textarea>
       <div className="card-footer">
-        <p className="count-label" style={counterColorChange}>
-          {count}/140
-        </p>
+        <Counter/>
         
         <MdSave className="text-gray-50 hover:text-gray-400 cursor-pointer" onClick={saveIdea} />
       </div>
