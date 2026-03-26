@@ -59,8 +59,8 @@ const Card = ({ card, idx }: CardProps) => {
   };
 
   return (
-    <div className="w-sm h-[250px] px-[5px] py-[7px] rounded-md bg-[#36393F] mt-[5px] flex flex-col
-    shadow-md shadow-neutral-300 transition-transform duration-250 ease-out hover:scale-[1.05]">
+    <div className="w-3xs h-[12rem] px-[5px] py-[7px] rounded-md bg-[#36393F] mt-[5px] flex flex-col
+    shadow-md shadow-neutral-300 transition-all duration-300 hover:scale-110">
       <div className="justify-self-start">
         <EditableInput
           titleValue={title}
@@ -78,9 +78,9 @@ const Card = ({ card, idx }: CardProps) => {
       </div>
       <div className="flex justify-between items-center w-full">
         {card.isUpdated ? (
-          <p className="text-xs text-gray-50">Updated at: {formattedDate}</p>
+          <p className="text-[0.65rem] text-gray-50">Updated at: {formattedDate}</p>
         ) : (
-          <p className="text-xs text-gray-50">Created at: {formattedDate}</p>
+          <p className="text-[0.65rem] text-gray-50">Created at: {formattedDate}</p>
         )}
         <div className="counter-wrapper">
           {isEditing ? <Counter /> : <div></div>}

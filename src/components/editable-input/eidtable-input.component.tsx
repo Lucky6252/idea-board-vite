@@ -50,7 +50,7 @@ const EditableInput = ({ titleValue, name, onChange }: EditableInputProps) => {
     <div className="px-2">
       {isEditable ? (
         <input
-          className="w-full !bg-neutral-800 !text-white mt-4 text-2xl text-center"
+          className="w-full antialiased !bg-neutral-800 font-mono !text-white mt-4 text-base font-semibold text-center"
           value={tempValue}
           onChange={handleChange}
           onBlur={handleBlur}
@@ -58,8 +58,8 @@ const EditableInput = ({ titleValue, name, onChange }: EditableInputProps) => {
         />
       ) : (
         <span className="flex flex-row w-full justify-center mt-4 item-ceter group gap-1" onClick={handleClick}>
-          <h2 className="text-white text-2xl">{titleValue}</h2>
-          <MdEdit className="hidden group-hover:inline size-[0.7rem] text-gray-50 mt-[0.5rem]" onClick={handleEditButton} />
+          <h2 className="text-white text-base font-semibold font-mono">{titleValue}</h2>
+          <MdEdit className="hidden group-hover:inline size-[0.6rem] text-gray-50 mt-[0.5rem]" onClick={handleEditButton} />
         </span>
       )}
     </div>

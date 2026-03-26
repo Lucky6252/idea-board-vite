@@ -48,12 +48,12 @@ const AddCard = () => {
 
   return (
     <div
-      className="w-sm h-[250px] px-[5px] py-[7px] rounded-md bg-[#36393F] mt-[5px] flex flex-col
-    shadow-md shadow-neutral-300 transition-transform duration-250 ease-out hover:scale-[1.05] gap-3"
+      className="w-3xs h-[12rem] px-[5px] py-[7px] rounded-md bg-[#36393F] mt-[5px] flex flex-col
+    shadow-md shadow-neutral-300 transition-all duration-300 hover:scale-110 gap-3"
     >
       <input
         autoFocus
-        className="w-full !bg-[#36393F] !text-white mt-4 text-2xl text-center"
+        className="w-full !bg-[#36393F] !text-white mt-4 text-base font-semibold text-center"
         value={idea.title}
         type="text"
         name="title"
@@ -62,7 +62,7 @@ const AddCard = () => {
       />
       <textarea
         id="description"
-        className="!bg-[#36393F] !text-white w-full h-full !font-light"
+        className="!bg-[#36393F] !text-white text-xs w-full h-full !font-light"
         value={idea.description}
         placeholder={
           idea.title.trim()

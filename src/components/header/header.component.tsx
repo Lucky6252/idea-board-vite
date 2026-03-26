@@ -1,4 +1,4 @@
-import IdeaLogo from '../../assets/IdeaLogo.svg'
+// import IdeaLogo from '../../assets/IdeaLogo.svg'
 
 const Header = () => {
   return (
