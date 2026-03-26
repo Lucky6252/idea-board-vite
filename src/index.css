@@ -1,12 +1,4 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind utilities;
-
-@layer base {
-  body {
-    @apply m-0;
-  }
-}
 
 :root {
   font-family: Roboto, sans-serif;

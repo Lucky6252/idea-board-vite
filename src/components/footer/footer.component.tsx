@@ -1,4 +1,4 @@
-import "./footer.styles.css";
+// import "./footer.styles.css";
 import IdeaLogo from "../../assets/IdeaLogo.svg";
 import { FaGithub } from "react-icons/fa";
 

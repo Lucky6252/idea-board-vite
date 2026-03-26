@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -56,7 +56,9 @@
 
 .git-button:hover {
   color: #66666e;
-}
+} */
+
+/*
 
 @media (min-width: 312px) and (max-width: 482px) {
   .footer-container {
@@ -85,7 +87,9 @@
     font-size: 0.8rem;
   }
 }
+*/
 
+/*
 @media (min-width: 483px) and (max-width: 734px) {
   .footer-container {
     gap: 0;
@@ -113,7 +117,9 @@
   .footer-container {
     gap: 60px;
     /* justify-content: space-between; */
-  }
+/*}
+
+
 
   .app-description p .extra-text {
     display: inline;
@@ -135,4 +141,4 @@
   .copywrite-details p {
     font-size: 1rem;
   }
-}
+}*/

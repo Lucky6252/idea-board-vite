@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   return (
     
-    <div className="bg-[#18191C] h-full">
+    <div className="bg-[#18191C] min-h-screen flex flex-col">
       <ToastContainer position="top-center" limit={1} />
       <div className="header-wrapper">
         <Header />
@@ -16,7 +16,7 @@ function App() {
       <div className="body-wrapper">
         <Body />
       </div>
-      <div className="footer-wrapper">
+      <div className="">
         <Footer />
       </div>
     </div>
