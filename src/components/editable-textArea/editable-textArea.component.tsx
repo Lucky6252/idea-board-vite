@@ -65,7 +65,7 @@ const EditableTextArea = ({
     <div className="pt-5 px-2">
       {isEdit ? (
         <textarea
-          className="!bg-neutral-800 text-xs !text-white w-full h-full !font-light"
+          className="!bg-neutral-800 text-xs !text-white w-full h-full font-sans-serif !font-light"
           value={tempDescValue}
           onChange={handleChange}
           onBlur={handleBlur}

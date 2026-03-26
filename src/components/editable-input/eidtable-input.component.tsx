@@ -50,7 +50,7 @@ const EditableInput = ({ titleValue, name, onChange }: EditableInputProps) => {
     <div className="px-2">
       {isEditable ? (
         <input
-          className="w-full antialiased !bg-neutral-800 font-mono !text-white mt-4 text-base font-semibold text-center"
+          className="w-full !bg-neutral-800 font-mono !text-white mt-4 text-base font-semibold text-center"
           value={tempValue}
           onChange={handleChange}
           onBlur={handleBlur}

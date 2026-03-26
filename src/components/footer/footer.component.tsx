@@ -3,17 +3,17 @@ import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="flex gap-5 p-5 bg-[#36393F]">
+    <div className="flex gap-10 p-5 bg-[#36393F]">
       <div className="flex flex-col w-40 gap-2 place-items-center">
         <img className="size-15" src={IdeaLogo} alt="Idea Board Logo" />
         <h3 className="text-l text-gray-50 font-bold">Idea Board</h3>
       </div>
-      <div className="text-center">
-        <p className="text-gray-50 font-base">
+      <div className="text-center w-500">
+        <p className="text-gray-50 font-arial text-xs">
           Our Idea Board is a simple yet powerful collaborative space designed
           to help individuals and teams capture, refine, and manage their ideas
           efficiently in one centralized platform. Using a clear title and a
-          concise description limited to 140 characters <span className="hidden">,allowing for quick and focused expression
+          concise description limited to 140 characters <span className="hidden lg:inline">,allowing for quick and focused expression
           of thoughts, while full editing functionality ensures ideas can be
           updated and improved at any time. The application securely saves all
           information directly in the browser’s local storage, meaning users’
@@ -29,8 +29,8 @@ const Footer = () => {
           future releases.</span>
         </p>
       </div>
-      <div className="w-55">
-        <p className="text-gray-50">© 2025 developed by Lucky</p>
+      <div className="flex  flex-col place-items-center">
+        <p className="text-gray-50 text-center">© 2025 developed by Lucky</p>
         <a href="https://github.com/Lucky6252/idea-board">
           <FaGithub className="text-gray-50" />
         </a>
