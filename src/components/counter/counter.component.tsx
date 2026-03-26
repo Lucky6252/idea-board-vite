@@ -1,8 +1,6 @@
 import { useIdeas } from "../../custome-hooks/useIdeas.hook";
 import type { CSSProperties } from "react";
 
-import './counter.styles.css'
-
 const Counter = () => {
   //Count updated from EditTextArea through Card to global state.
   const { count } = useIdeas();

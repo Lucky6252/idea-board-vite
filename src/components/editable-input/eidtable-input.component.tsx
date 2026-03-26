@@ -1,6 +1,5 @@
 import { useState, type ChangeEvent } from "react";
 import { MdEdit } from "react-icons/md";
-import "./eidtable-input.styles.css";
 
 //types for EditableInput properties
 type EditableInputProps = {

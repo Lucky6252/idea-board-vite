@@ -7,7 +7,7 @@ import type { ideaType } from "../../context/idea.types";
 import EditableInput from "../editable-input/eidtable-input.component";
 import EditableTextArea from "../editable-textArea/editable-textArea.component";
 import Counter from "../counter/counter.component";
-import "./card.styles.css";
+// import "./card.styles.css";
 
 //types for Card properties received from CardList.
 type CardProps = {

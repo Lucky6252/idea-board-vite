@@ -1,11 +1,10 @@
-// import "./footer.styles.css";
 import IdeaLogo from "../../assets/IdeaLogo.svg";
 import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div className="flex gap-5 p-5 bg-[#36393F]">
-      <div className="flex flex-col w-40 gap-2 bg-gray-600">
+      <div className="flex flex-col w-40 gap-2 bg-gray-600 !justify-center">
         <img className="size-15" src={IdeaLogo} alt="Idea Board Logo" />
         <h3 className="text-l text-gray-50 font-bold">Idea Board</h3>
       </div>

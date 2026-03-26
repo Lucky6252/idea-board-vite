@@ -5,7 +5,7 @@ import { useIdeas } from "../../custome-hooks/useIdeas.hook";
 import type { ideaType } from "../../context/idea.types";
 import Card from "../card/card.component";
 import AddCard from "../add-card/add-card.component";
-import "./card-list.styles.css";
+
 
 const CardList = () => {
   //Ideas used to create card(s)
@@ -71,7 +71,7 @@ const CardList = () => {
         </select>
       </div>
 
-      <div className="card-list-container">
+      <div className="grid grid-cols-2 px-4 w-full gap-5">
         <AddCard />
         {sortedIdeas &&
           sortedIdeas.map((idea, idx) => {

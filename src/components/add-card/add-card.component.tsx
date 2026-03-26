@@ -1,10 +1,10 @@
 import { useIdeas } from "../../custome-hooks/useIdeas.hook";
 import type { ideaType } from "../../context/idea.types";
-import type { CSSProperties, ChangeEvent } from "react";
+import type { ChangeEvent } from "react";
 
 import { MdSave } from "react-icons/md";
 import { useState } from "react";
-import './add-card.styles.css'
+// import "./add-card.styles.css";
 import Counter from "../counter/counter.component";
 
 const defaultIdea: ideaType = {
@@ -37,7 +37,7 @@ const AddCard = () => {
 
   const saveIdea = () => {
     if (idea.title.length > 0 && idea.description.length > 0) {
-      const newIdea = {...idea, isUpdated: false, modifiedDate: Date.now()}
+      const newIdea = { ...idea, isUpdated: false, modifiedDate: Date.now() };
       addIdea(newIdea);
       counter(0);
       setIdea(defaultIdea);
@@ -47,25 +47,40 @@ const AddCard = () => {
   };
 
   return (
-    <div className="w-sm h-[250px] px-[5px] py-[7px] rounded-md bg-[#36393F] mt-[5px] flex flex-col
-    shadow-md shadow-neutral-300 transition-transform duration-250 ease-out hover:scale-[1.05] gap-3">
-        <input  autoFocus className="w-full !bg-[#36393F] !text-white mt-4 text-2xl text-center" 
-        value={idea.title} type="text" name="title" onChange={handleChange} placeholder="Enter New Idea Title here..." />
-        <textarea
+    <div
+      className="w-sm h-[250px] px-[5px] py-[7px] rounded-md bg-[#36393F] mt-[5px] flex flex-col
+    shadow-md shadow-neutral-300 transition-transform duration-250 ease-out hover:scale-[1.05] gap-3"
+    >
+      <input
+        autoFocus
+        className="w-full !bg-[#36393F] !text-white mt-4 text-2xl text-center"
+        value={idea.title}
+        type="text"
+        name="title"
+        onChange={handleChange}
+        placeholder="Enter New Idea Title here..."
+      />
+      <textarea
         id="description"
         className="!bg-[#36393F] !text-white w-full h-full !font-light"
-          value={idea.description}
-          placeholder={idea.title.trim() ? "Enter Description here. Only 140 characters allowed" : ''}
-          name="description"
-          maxLength={140}
-          onChange={handleChange}
-          rows={5}
-          cols={35}
-        ></textarea>
-      <div className="card-footer">
-        <Counter/>
-        
-        <MdSave className="text-gray-50 hover:text-gray-400 cursor-pointer" onClick={saveIdea} />
+        value={idea.description}
+        placeholder={
+          idea.title.trim()
+            ? "Enter Description here. Only 140 characters allowed"
+            : ""
+        }
+        name="description"
+        maxLength={140}
+        onChange={handleChange}
+        rows={5}
+        cols={35}
+      ></textarea>
+      <div className="flex justify-between">
+        <Counter />
+        <MdSave
+          className="text-gray-50 hover:text-gray-400 cursor-pointer"
+          onClick={saveIdea}
+        />
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
-import './body.styles.css'
 import CardList from '../card-list/card-list.component';
 
 const Body = () => {
     return(
-        <div className="body-container">
+        <div className="my-5">
             <CardList/>
         </div>
     )

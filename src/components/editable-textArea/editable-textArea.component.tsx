@@ -1,4 +1,3 @@
-import "./editable-textArea.styles.css";
 import { useState } from "react";
 import type { ChangeEvent } from "react";
 import { MdEdit } from "react-icons/md";

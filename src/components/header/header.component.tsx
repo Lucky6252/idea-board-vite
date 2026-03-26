@@ -1,4 +1,3 @@
-import './header.styles.css'
 import IdeaLogo from '../../assets/IdeaLogo.svg'
 
 const Header = () => {
