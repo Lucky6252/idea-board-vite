@@ -61,8 +61,8 @@ const CardList = () => {
   };
 
   return (
-    <div className="w-full h-full">
-      <div className="flex justify-end w-full h-15 px-5">
+    <div className="w-full h-full ">
+      <div className="flex justify-end w-full h-15">
         <select className="self-center text-gray-50 bg-[#36393F]" value={sortType} onChange={handleChange}>
           <option value="newest">Newest</option>
           <option value="oldest">Oldest</option>
@@ -71,7 +71,7 @@ const CardList = () => {
         </select>
       </div>
 
-      <div className="grid grid-cols-2 px-4 w-full gap-5">
+      <div className="grid place-items-center grid-cols-4 gap-y-6 ">
         <AddCard />
         {sortedIdeas &&
           sortedIdeas.map((idea, idx) => {
