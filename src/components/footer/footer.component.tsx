@@ -5,7 +5,8 @@ const Footer = () => {
   return (
     <div className="flex gap-10 p-5 bg-[#36393F]">
       <div className="flex flex-col w-40 gap-2 place-items-center">
-        <img className="size-15" src={IdeaLogo} alt="Idea Board Logo" />
+        <img className="size-15 transition-all duration-300
+              hover:drop-shadow-[0_0_16px_white]" src={IdeaLogo} alt="Idea Board Logo" />
         <h3 className="text-l text-gray-50 font-bold">Idea Board</h3>
       </div>
       <div className="text-center w-500">

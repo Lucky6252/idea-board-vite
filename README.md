@@ -26,6 +26,6 @@ Add an unobtrusive notification when an update is made to a tile.
 ## Tech Stack
 
 - **Programming Language**: Typescript
-- **Styling**: CSS
+- **Styling**: Tailwind CSS
 - **Framework**: React
 - **Build Tool**: Vite
